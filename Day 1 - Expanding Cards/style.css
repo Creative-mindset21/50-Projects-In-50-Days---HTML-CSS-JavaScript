@@ -1,0 +1,89 @@
+/*? GOOGLE FONT LINKING */
+@import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*? RESET TO DEFAULTS */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*? GENERAL STYLING */
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: "Muli", sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel:first-of-type {
+  background-image: url("https://plus.unsplash.com/premium_photo-1778438304247-4b4f847d8a13?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8");
+}
+
+.panel:nth-of-type(2) {
+  background-image: url("https://images.unsplash.com/photo-1779287043213-9eae051828ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.panel:nth-of-type(3) {
+  background-image: url("https://images.unsplash.com/photo-1779200534350-840a32aa691f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyNHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.panel:nth-of-type(4) {
+  background-image: url("https://images.unsplash.com/photo-1779305192410-1a76dc98fede?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMXx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.panel:last-of-type {
+  background-image: url("https://images.unsplash.com/photo-1778483154532-05d26c21e777?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8");
+}
+
+.panel {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #fff;
+  flex: 0.1;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.5s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:last-of-type {
+    display: none;
+  }
+}
